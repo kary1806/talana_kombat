@@ -19,7 +19,7 @@ Talana Kombat es una app para pelea.
 Instalaciones de dependencias y devDependencias para empezar.
 Para la instalación, tu debes clonar el siguiente repositorio:
 
-- [Repositorio]()
+- [Repositorio](https://github.com/kary1806/talana_kombat.git)
 
 #### Para el ambiente de desarrollo
 
