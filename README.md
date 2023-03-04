@@ -34,11 +34,6 @@ $ docker-compose up
 _Nota: verificar que se ejecuten todas las migraciones (probablemente se deba correr docker-compose up nuevamente)._
 
 ```sh
-# Para crear super usuario
-$ docker-compose run talanakombat python manage.py createsuperuser
-```
-
-```sh
 # Para correr el shell de django
 $ docker-compose run talanakombat python manage.py shell
 ```
@@ -59,7 +54,6 @@ Para interactuar con los endpoints se necesita un Api Key puede ser generada des
 
 ```sh
 $ url_backoffice = http://0.0.0.0:8000/
-$ url_backoffice_generate_new_api_key = http://0.0.0.0:8000/admin/rest_framework_api_key/apikey/
 ```
 
 # Url Documentacion Endpoints
