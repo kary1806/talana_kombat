@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres_talanakombat
+    ports:
+      - "5432:5432"
+    volumes:
+      - .data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: talanakombat_db
+      POSTGRES_USER: talanakombat_user
+      POSTGRES_PORT: 5432
+      POSTGRES_PASSWORD: talanakombat_password
+      PGDATA: /tmp
+
+  talanakombat:
+    restart: always
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - .:/backend
+    command: >
+      sh -c " python manage.py migrate && python manage.py runserver 0.0.0.0:8000 "
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
